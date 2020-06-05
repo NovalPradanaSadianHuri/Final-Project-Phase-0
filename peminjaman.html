@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">	
+		@media print
+		{
+			#non-printable { display: none; }
+			#printThis { display: block; }
+			.non-printable { display: none; }
+		}
+	</style>
+	<title>Hacktiv8 Library</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id ="non-printable" class="header">
+		<h2>Hacktiv8 Library</h2>
+	</div>
+	
+	<div id ="non-printable"  class="nav">
+		<p>Jadwal Buka : Senin - Kamis (08.00 - 16.00) & Jum'at - Sabtu (08.00 - 13.00)</p>
+	</div>
+	
+	<div id ="non-printable" class="samping2">
+		<ul>
+			<br><br><br>
+			<a href="admin.html">HOME</a>
+			<br><br><br>
+		</ul>
+	</div>
+
+	</div>
+	<div class="isi">
+		<center>
+		<h3 id ="non-printable"> Data Peminjaman Perorang</h3>
+			<form id="myForm" class ="non-printable" action="#">
+				<table>
+					<tr>
+					<td>Nama</td>
+						<td>:</td>
+						<td><input type="text" id="inputNama"></td>
+					</tr>
+					<tr>
+						<td>Alamat</td>
+						<td>:</td>
+						<td><input type="text" id="inputAlamat"></td>
+					</tr>
+					<tr>
+						<td>Judul Buku</td>
+							<td>:</td>
+							<td><input type="text" id="inputBuku"></td>
+					</tr>
+					<tr>
+						<td>Tanggal Peminjaman</td>
+							<td>:</td>
+							<td><input type="date" id="inputTanggalPinjam"></td>
+					</tr>
+					<tr>
+						<td>Tanggal Pengembalian</td>
+							<td>:</td>
+							<td><input type="date" id="inputTanggalKembali"></td>
+					</tr>
+					<tr>
+						<td></td><td></td>
+						<td><button onclick="input()">INPUT</button></td>
+					</tr>		
+				</table>
+			</form>
+		</center>
+		<div id="printThis" class="print">
+			<table>
+				<tr>
+				<td>Nama</td>
+					<td>:</td>
+					<td id="nama"></td>
+				</tr>
+				<tr>
+					<td>Alamat</td>
+					<td>:</td>
+					<td id="alamat"></td>
+				</tr>
+				<tr>
+					<td>Judul Buku</td>
+						<td>:</td>
+						<td id="buku"></td>
+				</tr>
+				<tr>
+					<td>Tanggal Peminjaman</td>
+						<td>:</td>
+						<td id="tanggalPinjam"></td>
+				</tr>
+				<tr>
+					<td>Tanggal Pengembalian</td>
+						<td>:</td>
+						<td id="tanggalKembali"></td>
+				</tr>
+			</table>
+		</div>	
+		<button id ="non-printable" onclick="print('printThis')">PRINT</button>
+	</div>
+	<div id ="non-printable" class="footer">
+		<h4>&trade; Hacktiv8 KG-01-Agile Fox </h4>
+	</div>
+	<script>
+	function input() {
+  		var inputNama = document.getElementById("myForm").elements[0].value;
+		var inputAlamat = document.getElementById("myForm").elements[1].value;
+		var inputBuku = document.getElementById("myForm").elements[2].value;
+		var inputTanggalPinjam= document.getElementById("myForm").elements[3].value;
+		var inputTanggalKembali= document.getElementById("myForm").elements[4].value;
+  		document.getElementById("nama").innerHTML = inputNama;
+		document.getElementById("alamat").innerHTML = inputAlamat;
+		document.getElementById("buku").innerHTML = inputBuku;
+		document.getElementById("tanggalPinjam").innerHTML = inputTanggalPinjam;
+		document.getElementById("tanggalKembali").innerHTML = inputTanggalKembali;
+	}
+
+	function printThis(elementID) {
+ 		var contentPrint = document.getElementById('printThis').innerHTML;
+ 		window.frames["print_frame"].document.body.innerHTML = contentPrint;
+ 		window.frames["print_frame"].window.focus();
+ 		window.frames["print_frame"].window.print();
+}
+	</script>
+</body>
+</html>
